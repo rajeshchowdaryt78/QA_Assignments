@@ -1,6 +1,6 @@
 import { Page, Locator } from "@playwright/test";
-import testdata from './TestData.json/Data.json';  
-const loginUrl = testdata.loginUrl;
+import TestData from './TestData/Data.json';
+const loginUrl = TestData.loginUrl;
 
 
 
