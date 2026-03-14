@@ -1,4 +1,6 @@
 import { Page, Locator } from "@playwright/test";
+import { TestData } from "./TestData";
+const testData = new TestData();
 
 export class pages {
 
@@ -18,7 +20,7 @@ export class pages {
     }
 
     async goToLoginPage() {
-        await this.page.goto('https://practicetestautomation.com/practice-test-login/');
+        await this.page.goto(testData.loginUrl);
     }   
 
     async validLogin(username: string, password: string) {
@@ -32,6 +34,16 @@ export class pages {
         let successMessage = await this.page.locator('.post-title').textContent();
         return successMessage;
     }    
+    async invalidLogin(username: string, password: string) {
+        await this.Username.fill(username);
+        await this.Password.fill(password);
+        await this.LoginButton.click();
+    }
+
+    async getErrorMessage() {
+    let errorMessage = await this.page.locator('#error').textContent();
+    return errorMessage;
+    }
 
     async logout() {
         await this.LogoutButton.click();
