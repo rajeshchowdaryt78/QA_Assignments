@@ -1,0 +1,13 @@
+
+{ 
+
+    "username": "student",
+    "password": "Password123",
+    "invalidUsername": "invalidUser",
+    "invalidPassword": "InvalidPassword",
+    "emptyUsername": "",
+    "emptyPassword": "",
+    "loginUrl": "https://practicetestautomation.com/practice-test-login/"
+}
+
+

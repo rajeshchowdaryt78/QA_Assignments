@@ -1,6 +1,8 @@
 import { Page, Locator } from "@playwright/test";
-import { TestData } from "./TestData";
-const testData = new TestData();
+import testdata from './TestData.json/Data.json';  
+const loginUrl = testdata.loginUrl;
+
+
 
 export class pages {
 
@@ -20,7 +22,7 @@ export class pages {
     }
 
     async goToLoginPage() {
-        await this.page.goto(testData.loginUrl);
+        await this.page.goto(loginUrl);
     }   
 
     async validLogin(username: string, password: string) {
